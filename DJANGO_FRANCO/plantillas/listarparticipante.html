@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Seminario de GASTRONOMÍA</title>
+</head>
+<body class="container mt-5">
+    <div class="alert alert-success display-1">Lista de Participantes</div>
+    {% if Participante %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>telefono</th>
+                <th>fecha inscripcion</th>
+                <th>institucion</th>
+                <th>hora inscripcion</th>    
+                <th>email</th>    
+                <th>estado</th>
+                <th>observacion</th>                 
+                <th>--</th>       
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in Participante%}
+            <tr>
+                <td>{{pro.id}}</td>
+                <td>{{pro.nombre}}</td>
+                <td>{{pro.telefono}}</td>
+                <td>{{pro.fecha_inscripcion}}</td>   
+                <td>{{pro.institucion}}</td>      
+                <td>{{pro.hora_inscripcion}}</td>  
+                <td>{{pro.email}}</td>  
+                <td>{{pro.estado}}</td>  
+                <td>{{pro.observacion}}</td>  
+                <td><a href="/actualizar/{{pro.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>      
+                <td><a href="/eliminar/{{pro.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></td>                       
+             </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <div class="alert alert-info">No se visualizan datos</div>
+    {% endif %}
+
+    <a href="../" class="btn btn-danger">VOLVER</a>
+    <a href="../agregarparticipante" class="btn btn-info float-end">AÑADIR INSCRIPCION</a>
+</body>
+</html>

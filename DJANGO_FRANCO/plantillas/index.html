@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Gestionar Participantes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $('a.participante}').click(function(){
+                var ruta = "/api-participante/"+document.getElementById("id").value;
+                //redirigir a ruta
+                $(location).attr('href',ruta);
+        });
+    });
+    </script>
+</head>
+<body class="container mt-5">
+    <div class="alert alert-info display-1 text-center">SEMINARIO DE GASTRONOMÍA</div>
+    
+
+    <a href="/participante" class="btn btn-info">participantes</a>
+
+    <div class="alert alert-info text-center"> API</div>
+
+    <div class="alert-info text-center">Todos los participantes</div>
+    <a href="/api-participante" class="btn btn-info">API Participantes</a>
+
+    <div class="alert-info text-center">Participante por ID</div>
+    <label for="id">Ingrese el ID del participante</label>
+    <input type="text" id="id">
+    <a class="participante btn btn-info" >API participantes por ID</a>
+
+
+
+</body>
+</html>
